@@ -1,4 +1,4 @@
-import { LayoutDashboard, Users, FileText, Calendar, Settings, LogOut, Building2 } from 'lucide-react';
+import { LayoutDashboard, Users, FileText, Calendar, LogOut, Building2, BarChart3 } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useTenant } from '../../contexts/TenantContext';
 
@@ -9,9 +9,11 @@ interface SidebarProps {
 
 const menuItems = [
   { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { id: 'clientes', label: 'Clientes', icon: Users },
-  { id: 'tarefas', label: 'Tarefas', icon: FileText },
+  { id: 'dashboard-avancado', label: 'Análise Avançada', icon: BarChart3 },
+  { id: 'clientes', label: 'Clientes', icon: FileText },
+  { id: 'tarefas', label: 'Tarefas', icon: Calendar },
   { id: 'templates', label: 'Templates', icon: Calendar },
+  { id: 'usuarios', label: 'Usuários', icon: Users },
 ];
 
 export function Sidebar({ currentView, onViewChange }: SidebarProps) {

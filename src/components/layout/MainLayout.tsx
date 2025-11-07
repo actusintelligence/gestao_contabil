@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Sidebar } from './Sidebar';
 import { Dashboard } from '../dashboard/Dashboard';
+import { DashboardAdvanced } from '../dashboard/DashboardAdvanced';
 import { ClientesList } from '../clientes/ClientesList';
 import { TarefasList } from '../tarefas/TarefasList';
 import { TemplatesList } from '../templates/TemplatesList';
+import { UsuariosList } from '../usuarios/UsuariosList';
 import { TaskGenerator } from '../tarefas/TaskGenerator';
 
 export function MainLayout() {
@@ -13,6 +15,8 @@ export function MainLayout() {
     switch (currentView) {
       case 'dashboard':
         return <Dashboard />;
+      case 'dashboard-avancado':
+        return <DashboardAdvanced />;
       case 'clientes':
         return <ClientesList />;
       case 'tarefas':
@@ -24,6 +28,8 @@ export function MainLayout() {
         );
       case 'templates':
         return <TemplatesList />;
+      case 'usuarios':
+        return <UsuariosList />;
       default:
         return <Dashboard />;
     }
